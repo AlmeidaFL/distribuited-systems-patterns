@@ -6,15 +6,13 @@ networks:
 
 services:
   app:
-    image: mcr.microsoft.com/dotnet/aspnet
+    image: hashicorp/http-echo:1.0
     container_name: app
-    networks:
-      - my-network
+    command: ["-listen=:5000", "-text=Hello from app"]
     expose:
       - "5000"
-    environment:
-      - ASPNETCORE_URLS=http://0.0.0.0:5000
-
+    networks:
+      - my-network
 
   nginx:
     image: nginx:1.27-alpine
