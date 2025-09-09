@@ -1,4 +1,4 @@
 #!/bin/bash
 
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./example.key -out ./example.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./certs/example.key -out ./certs/example.crt
 
